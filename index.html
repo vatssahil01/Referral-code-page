@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Code</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Reset margins, paddings and box-sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar Styles */
+        nav {
+            width: 100%;
+            height: 60px;
+            font-size: 30px;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 0px;
+            font-size: larger;
+            font-weight: 700;
+            position: relative;
+            top: 60px; /* Adjusted to be just below the navbar */
+            width: 375px; /* Fixed width */
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Container Styles */
+        .container {
+            background-color: white;
+            border-top-right-radius: 20%;
+            border-top-left-radius: 20%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 20%;
+            width: 375px; /* Fixed width */
+            height: 387px;
+            text-align: center;
+            border: 2px solid #007bff;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Content styles */
+        .content {
+            padding: 20px;
+            height: 275px;
+            width: 250px;
+            margin: 0 auto;
+        }
+
+        .content p {
+            margin: 0 0 10px;
+            color: #666;
+            font-size: large;
+            font-weight: 700;
+            position: absolute;
+            top: 48%;  /* Moved down to 48% */
+            left: 13%; /* Moved left to 13% */
+        }
+
+        .input-field {
+            border: 2px dashed #007bff;
+            padding: 10px;
+            position: absolute;
+            top: 60%;  /* Moved to 60% */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 280px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* Buttons container with flexbox for horizontal alignment */
+        .buttons {
+            display: flex;
+            justify-content: flex-start;  /* Makes buttons closer */
+            align-items: center;          /* Vertically align buttons */
+            position: absolute;
+            top: 80%;                     /* Adjusted to move buttons down */
+            left: 85%;                    /* Adjusted to move buttons to the right */
+            transform: translateX(-50%);
+            width: 90%;
+        }
+
+        .buttons button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-right: 10px;  /* Adds a small gap between the buttons */
+        }
+
+        .buttons .skip {
+            background-color: transparent;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .buttons .apply {
+            background-color: #007bff;
+            color: white;
+        }
+
+        img {
+            height: 35px;
+            position: absolute;
+            left: 58%; /* Moved slightly to the right */
+            top: -15%;
+        }
+
+        #header_content {
+            position: absolute;
+            top: -15%; /* Moved to -15% */
+            left: 15%; /* Moved to 15% */
+            font-size: larger;
+            font-weight: 500;
+        }
+
+        /* Responsive Design - Same Layout for All Screens */
+        @media (max-width: 1440px) {
+            .header {
+                width: 375px; /* Fixed width */
+                font-size: larger;
+                padding: 20px;
+            }
+
+            .container {
+                width: 375px; /* Fixed width */
+                height: 387px;
+                top: 20%;
+            }
+
+            .content {
+                width: 250px;
+                margin: 0 auto;
+            }
+
+            .content p {
+                font-size: large;
+                top: 48%;  /* Moved down to 48% */
+                left: 13%; /* Moved left to 13% */
+            }
+
+            .input-field {
+                width: 280px;
+                top: 60%;  /* Moved to 60% */
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .buttons {
+                top: 80%; /* Adjusted to move buttons down */
+                left: 85%; /* Adjusted to move buttons to the right */
+                width: 90%;
+            }
+
+            img {
+                height: 35px;
+                left: 58%; /* Moved slightly to the right */
+            }
+
+            #header_content {
+                left: 15%; /* Moved to 15% */
+                font-size: larger;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .header {
+                width: 375px; /* Fixed width */
+                font-size: larger;
+            }
+
+            .container {
+                width: 375px; /* Fixed width */
+                height: 387px;
+                top: 20%;
+            }
+
+            .content {
+                width: 250px;
+                margin: 0 auto;
+            }
+
+            .content p {
+                font-size: large;
+                top: 48%;  /* Moved down to 48% */
+                left: 13%; /* Moved left to 13% */
+            }
+
+            .input-field {
+                width: 280px;
+                top: 60%;  /* Moved to 60% */
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .buttons {
+                top: 80%; /* Adjusted to move buttons down */
+                left: 85%; /* Adjusted to move buttons to the right */
+                width: 90%;
+            }
+
+            img {
+                height: 35px;
+                left: 58%; /* Moved slightly to the right */
+            }
+
+            #header_content {
+                left: 15%; /* Moved to 15% */
+                font-size: larger;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                width: 375px; /* Fixed width */
+                font-size: larger;
+                padding: 20px;
+            }
+
+            .container {
+                width: 375px; /* Fixed width */
+                height: 387px;
+                top: 20%;
+            }
+
+            .content {
+                width: 250px;
+                margin: 0 auto;
+            }
+
+            .content p {
+                font-size: large;
+                top: 48%;  /* Moved down to 48% */
+                left: 13%; /* Moved left to 13% */
+            }
+
+            .input-field {
+                width: 280px;
+                top: 60%;  /* Moved to 60% */
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .buttons {
+                top: 80%; /* Adjusted to move buttons down */
+                left: 85%; /* Adjusted to move buttons to the right */
+                width: 90%;
+            }
+
+            img {
+                height: 35px;
+                left: 58%; /* Moved slightly to the right */
+            }
+
+            #header_content {
+                left: 15%; /* Moved to 15% */
+                font-size: larger;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                width: 375px; /* Fixed width */
+                font-size: larger;
+                padding: 20px;
+            }
+
+            .container {
+                width: 375px; /* Fixed width */
+                height: 387px;
+                top: 20%;
+            }
+
+            .content {
+                width: 250px;
+                margin: 0 auto;
+            }
+
+            .content p {
+                font-size: large;
+                top: 48%;  /* Moved down to 48% */
+                left: 13%; /* Moved left to 13% */
+            }
+
+            .input-field {
+                width: 280px;
+                top: 60%;  /* Moved to 60% */
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .buttons {
+                top: 80%; /* Adjusted to move buttons down */
+                left: 85%; /* Adjusted to move buttons to the right */
+                width: 90%;
+            }
+
+            img {
+                height: 35px;
+                left: 58%; /* Moved slightly to the right */
+            }
+
+            #header_content {
+                left: 15%; /* Moved to 15% */
+                font-size: larger;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">NAVBAR</a>
+    </nav>
+
+    <div class="header">
+        <div class="container mt-5">
+            <span id="header_content">Referral Code</span>
+            <span id="icon">
+                <img src="referal.svg" alt="Referral Icon">
+            </span>
+        </div>
+
+        <div class="content">
+            <p>Please enter referral code</p>
+            <div class="form-group">
+                <input type="text" class="form-control input-field" placeholder="Referral Code">
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-secondary skip">Skip</button>
+                <button class="btn btn-primary apply">Apply</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
